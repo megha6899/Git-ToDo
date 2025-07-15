@@ -1,0 +1,17 @@
+# terraform {
+#   backend "azurerm" {
+#     resource_group_name = "secretstorerg"
+#     storage_account_name = "secretstoreaccount1234"                              # Can be passed via `-backend-config=`"storage_account_name=<storage account name>"` in the `init` command.
+#     container_name       = "secretterra"                               # Can be passed via `-backend-config=`"container_name=<container name>"` in the `init` command.
+#     key                  = "dev.terraform.tfstate"                # Can be passed via `-backend-config=`"key=<blob key name>"` in the `init` command.
+#   }
+# }
+
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "myrgaks"
+    storage_account_name = "mystorageaks"          # Can be passed via `-backend-config=`"storage_account_name=<storage account name>"` in the `init` command.
+    container_name       = "myakscontainer"        # Can be passed via `-backend-config=`"container_name=<container name>"` in the `init` command.
+    key                  = "abc.terraform.tfstate" # Can be passed via `-backend-config=`"key=<blob key name>"` in the `init` command.
+  }
+}
